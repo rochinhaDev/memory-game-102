@@ -12,12 +12,11 @@
       <h1>Memory Game</h1>
       <p>Seja bem vindo. Você precisa achar as imagens iguais.</p>
       <button id="buttonStart">Jogar</button>
-
     </div>
     <div id="gameScreen" class="hide">
-      <h1>Game</h1>
+      <h1>Lives:<span id="livesSpan"></span></h1>
       <div id="board">
-      <!--
+        <!--
         <img src="./images/harmonia.svg" alt="">
         <img src="./images/poder.svg" alt="">
         <img src="./images/projetar.svg" alt="">
@@ -27,8 +26,14 @@
         <img src="./images/projetar.svg" alt="">
         <img src="./images/refletir.svg" alt="">
 -->
+        <div class="hide" id="winScreen">
+          <h1>Parabéns você ganhou!!!!!😀</h1>
+        </div>
+        <div class="hide" id="loseScreen">
+          <h1>Parabéns você ganhou!!!!!😀</h1>
+        </div>
       </div>
     </div>
-    <script src="./js/index.js"></script>
+    <script src="./js/index1.js"></script>
   </body>
 </html>

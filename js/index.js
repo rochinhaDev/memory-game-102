@@ -2,6 +2,8 @@ const homeScreen = document.querySelector("#homeScreen");
 const buttonStart = document.querySelector("#buttonStart");
 const gameScreen = document.querySelector("#gameScreen");
 const board = document.querySelector("#board");
+const winScreen = document.querySelector("#winScreen");
+const loseScreen = document.querySelector("#loseScreen")
 //variareis
 const deck = [
   "./images/harmonia.svg",
@@ -14,6 +16,7 @@ const deck = [
   "./images/refletir.svg",
 ];
 let selectedCards = [];
+let lives = 4
 
 buttonStart.addEventListener("click", () => {
   homeScreen.classList.add("hide");
@@ -31,6 +34,7 @@ function startGame() {
       card.previousElementSibling.classList.remove("hide");
       selectedCards.push(card.previousElementSibling);
       checkPair();
+      checkStatusGame();
     });
   });
 }
@@ -51,6 +55,8 @@ function checkPair() {
     return;}
     if (selectedCards[0].src === selectedCards[1].src) {
       console.log("as cartas são iguais");
+      selectedCards[0].classList("turn");
+      selectedCards[1].classList("turn");
       selectedCards =[];
       return
     }
@@ -69,4 +75,21 @@ function checkPair() {
       })
     }
 
+}
+function checkStatusGame(){
+    if (lives === 0){
+        loseScreen.classList.remove("hide");
+        board.classList.add("hide");
+        location.reload();
+        setTimeout(() =>{
+            
+        },1000);
+    }
+    const cardsTurn =document.querySelectorAll(".turn");
+    if (cardsTurn.length === deck.length){
+        winScreen.classList.remove("hide");
+        setTimeout(() =>{
+            location.reload()
+        },1000)
+    }
 }
