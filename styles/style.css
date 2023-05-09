@@ -1,14 +1,17 @@
-*{
+* {
     padding: 0;
     margin: 0;
-}
-.hide{
-    display: none !important;
-}
-.show{
+  }
+  
+  .hide {
+    display: none !important
+  }
+  
+  .show {
     display: flex;
-}
-#board {
+  }
+  
+  #board {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
